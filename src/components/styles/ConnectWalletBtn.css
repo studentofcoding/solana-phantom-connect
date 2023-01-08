@@ -1,0 +1,26 @@
+.btn-1 {
+    background-image: linear-gradient(to right,  #03E1FF 0%, #DC1FFF 140%);
+  }
+  
+  .btn{
+    padding: 12px 33px 12px 33px;
+    border: 0px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .btn:hover{
+    background-image: linear-gradient(to right, #DC1FFF -70%, #03E1FF 120%);
+      box-shadow:0 1px 12px 0 #00e1ff8b;
+      text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  
+  .phantom{
+    max-width: 30px;
+    padding-right: 10px;
+    margin-left: -10px;
+  }
