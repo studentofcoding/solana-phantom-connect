@@ -121,7 +121,9 @@ function App() {
               <Connected
               connected={walletAddress} 
               />
+              <p>
               Sorry wallet are not included into the collection, you can buy <a target="_blank" href="https://magiceden.io/">here</a>
+              </p>
             </>
           }
         </>
