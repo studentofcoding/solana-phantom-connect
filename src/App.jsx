@@ -4,6 +4,16 @@ import ConnectWalletBtn from "./components/ConnectWalletBtn";
 import Connected from "./components/Connected";
 // import Footer from "./components/Footer";
 import isWhitelisted from "./utils/Whitelisted";
+// Import the JSON as a Javascript object first
+import wl from './wl.json'; /*NodeJS syntax*/
+// Convert the object to a string
+// JSON.stringify(wlJson);
+// Output will look like this
+// "{"key1":"value","key2":"value2"}"
+// .env file
+// SOME_ENV_VARIABLE={"key1":"value","key2":"value2"}
+// Use the same by parsing the string back to object
+// const SOME_ENV_VAR = JSON.parse(process.env.SOME_ENV_VARIABLE || {});
 import './App.css';
 
 function App() {
@@ -15,7 +25,11 @@ function App() {
       //checks whether solana object is present or not
       console.log(window.solana);
       console.log("Phantom wallet found!");
-
+      const wlJson = JSON.stringify(wl);
+      console.log(wlJson);
+      // const WL_ENV = JSON.parse(import.meta.env.WL_ADDRESSES || [])
+      console.log("This is wl from env", WL_ENV);
+      
       //connects to the phantom wallet if it is already authenticated to do so
       const response = await window.solana.connect({ onlyIfTrusted: true });
       setWalletAddress(response.publicKey.toString());
@@ -98,7 +112,8 @@ function App() {
       {/* Intro */}
       <div className="container">
       <h3>Introduction</h3>
-      <p> Our DApp is designed check if your wallet is included into our collection, if it's you'll get `Wallet included in the collection!` and `Sorry wallet are not included into the collection` if it's not included</p>
+      <p> This DApp is designed to DEMO if your wallet is included into some NFT collection, if it's included you'll get `Wallet included in the collection!` and `Sorry wallet are not included into the collection` if it's not included</p>
+      <p> If you want to include your own Phantom wallet, you can chat me on upwork</p>
       <br />
 
       {/* Connect Wallet Button */}
